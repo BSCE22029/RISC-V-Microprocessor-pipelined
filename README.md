@@ -1,3 +1,4 @@
+# RISC-V pipelined processor using Verilog HDL
 This project implements a 5-stage pipelined RISC-V processor using Verilog HDL. The processor supports basic RISC-V instructions and demonstrates instruction-level parallelism with pipelining.
 
 📌 Features
