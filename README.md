@@ -1,29 +1,5 @@
 This project implements a 5-stage pipelined RISC-V processor using Verilog HDL. The processor supports basic RISC-V instructions and demonstrates instruction-level parallelism with pipelining.
 
-📁 Project Structure
-css
-Copy
-Edit
-riscv-pipelined/
-├── README.md
-├── src/
-│   ├── alu.v
-│   ├── control_unit.v
-│   ├── datapath.v
-│   ├── hazard_unit.v
-│   ├── forwarding_unit.v
-│   ├── instruction_memory.v
-│   ├── register_file.v
-│   ├── pipeline_registers/
-│   │   ├── if_id.v
-│   │   ├── id_ex.v
-│   │   ├── ex_mem.v
-│   │   ├── mem_wb.v
-├── testbench/
-│   ├── testbench.v
-│   └── test_program.mem
-└── waveform/
-    └── pipeline.vcd
 📌 Features
 ✅ 5-stage pipeline: IF, ID, EX, MEM, WB
 
@@ -63,6 +39,7 @@ B-type: beq, bne
 
 ⚙️ How to Run
 Prerequisites
+Vivado Software by Xilix or
 Icarus Verilog (for simulation)
 Install: sudo apt install iverilog gtkwave
 
@@ -71,21 +48,14 @@ GTKWave (for waveform viewing)
 Step-by-step Execution
 Compile the design and testbench:
 
-bash
-Copy
-Edit
+
 iverilog -o riscv_pipeline testbench/testbench.v src/**/*.v
 Run the simulation:
 
-bash
-Copy
-Edit
 vvp riscv_pipeline
 View waveform (optional):
 
-bash
-Copy
-Edit
+
 gtkwave waveform/pipeline.vcd
 🧠 Design Highlights
 Hazard Handling:
@@ -102,9 +72,7 @@ The file test_program.mem includes a set of RISC-V instructions in hexadecimal f
 
 Example:
 
-cpp
-Copy
-Edit
+
 00000013  // nop
 00400093  // li x1, 4
 00108133  // add x2, x1, x1
